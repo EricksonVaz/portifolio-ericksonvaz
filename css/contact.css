@@ -1,0 +1,55 @@
+.form-contact{
+    margin: 3rem auto;
+    width: 600px;
+}
+.form-control{
+    width: 100%;
+    padding: 1rem;
+    border: 1px solid #4c4c4c;
+    border-radius: 5px;
+    background-color: transparent;
+    color: white;
+    font-size: 1.7rem;
+}
+.form-control:focus{
+    outline: none;
+    box-shadow: 0 0 5px #4c4c4c;
+}
+.form-group,.btn-submit{
+    margin: 1rem;
+}
+.form-row{
+    display: flex;
+}
+.form-row .form-group{
+    flex-grow: 1;
+}
+.btn-submit {
+    border: 2px solid gainsboro;
+    color: gainsboro;
+    font-size: 1.8rem;
+    padding: 1rem;
+    margin-top: 1rem;
+    border-radius: 5px;
+    text-transform: lowercase;
+    text-align: center;
+    background-color: transparent;
+    cursor: pointer;
+    transition: all .3s;
+}
+
+.btn-submit:hover {
+    background-color: gainsboro;
+    color: rgb(255, 145, 0);
+}
+
+@media screen and (max-width:620px) {
+    .form-contact{
+        width: 100%;
+    }
+}
+@media screen and (max-width:460px) {
+    .form-row {
+        flex-direction: column;
+    }
+}

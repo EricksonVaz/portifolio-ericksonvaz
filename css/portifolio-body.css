@@ -1,0 +1,22 @@
+.portifolio-content{
+    position: relative;
+}
+
+.portifolio-content>section{
+    min-height: 400px;
+    margin-top: 6rem;
+}
+.section-title{
+    font-size: 3rem;
+    margin: 0 auto;
+    width: max-content;
+    padding-bottom: 1rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    border-bottom: 3px solid rgb(255, 145, 0);
+}
+@media all and (max-width:700px) {
+    .portifolio-content{
+        margin-top: 25rem;
+    }
+}

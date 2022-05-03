@@ -1,0 +1,49 @@
+.list-certificates {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    max-width: 1140px;
+    margin: 3rem auto;
+    gap: 1rem;
+    text-align: center;
+}
+.certificate-card {
+    width: 200px;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    border: 1px solid #4c4c4c;
+    background-color: #2C241B;
+    border-radius: 5px;
+}
+.certificate-img {
+    max-width: 100%;
+    max-height: 134px;
+}
+.label-certificate {
+    padding: 1rem 0;
+    font-size: 2rem;
+    font-weight: bold;
+}
+.label-company-cert{
+    font-size: 1.4rem;
+}
+.cert-open-model {
+    border: 2px solid gainsboro;
+    color: gainsboro;
+    font-size: 1.8rem;
+    padding: 1rem;
+    margin-top: 1rem;
+    width: 100%;
+    border-radius: 5px;
+    text-transform: lowercase;
+    text-align: center;
+    transition: all .3s;
+}
+
+.cert-open-model:hover {
+    background-color: gainsboro;
+    color: rgb(255, 145, 0);
+}

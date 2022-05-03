@@ -1,0 +1,116 @@
+.filter-projects-options,.list-projects{
+    max-width: 1140px;
+    margin: 4rem auto;
+}
+.filter-projects-options{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 5rem;
+}
+.btn-cat-project{
+    padding: 1rem;
+    font-size: 1.6rem;
+    color: gainsboro;
+    border: 1px solid #4c4c4c;
+    background-color: #2C241B;
+    border-radius: 5px;
+    text-transform: lowercase;
+}
+.stack-selection{
+    background-color: transparent;
+    padding: 1rem;
+    font-size: 1.6rem;
+    border: 1px solid #4c4c4c;
+    border-radius: 5px;
+    color: gainsboro;
+}
+.stack-selection option{
+    color: black;
+}
+.list-projects{
+    min-height: 500px;
+}
+.tab-projects.hide{
+    width: 100%;
+    height: 100%;
+    display: none;
+}
+.tab-projects.show {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    max-width: 1140px;
+    margin: 3rem auto;
+    gap: 1rem;
+}
+.card-project {
+    width: 200px;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    border: 1px solid #4c4c4c;
+    background-color: #2C241B;
+    border-radius: 5px;
+}
+.project-name {
+    padding: 1rem 0;
+    font-size: 2rem;
+    font-weight: bold;
+    text-align: center;
+}
+.btn-group-projects{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+.btn-cat-project.selected{
+    border: 2px solid gainsboro;
+}
+.btn-group-projects>.btn-project{
+    width: 100%;
+}
+.btn-project {
+    border: 2px solid gainsboro;
+    color: gainsboro;
+    font-size: 1.8rem;
+    padding: 1rem;
+    margin-top: 1rem;
+    border-radius: 5px;
+    text-transform: lowercase;
+    text-align: center;
+    transition: all .3s;
+    background-color: transparent;
+}
+
+.btn-project:hover {
+    background-color: gainsboro;
+    color: rgb(255, 145, 0);
+}
+.sub-btn-group-projects{
+    display: flex;
+    gap: 1rem;
+}
+.sub-btn-group-projects>.btn-project{
+    flex-grow: 1;
+}
+@media all and (max-width:810px){
+    .filter-projects-options{
+        flex-direction: column;
+    }
+    .projects-categories{
+        display: flex;
+        gap: 1rem;
+        align-items: center;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .stack-selection{
+        margin-bottom: 1.5rem;
+        order: -1;
+    }
+}

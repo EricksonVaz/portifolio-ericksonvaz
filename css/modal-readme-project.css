@@ -1,0 +1,32 @@
+.modal-readme-project {
+    width: 400px;
+    height: 500px;
+    background-color: white;
+    border-radius: 10px;
+    z-index: 4;
+    position: fixed;
+    top: -50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: top .5s;
+}
+.modal-readme-project.open {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.modal-readme-project .modal-body>p{
+    font-size: 1.6rem;
+    color: rgb(76, 76, 76);
+    text-align: justify;
+}
+.modal-readme-project .modal-body{
+    height: 350px;
+    overflow-y: auto;
+    padding: 1rem;
+}
+@media all and (max-width:440px) {
+    .modal-readme-project {
+        width: 95%;
+    }
+}

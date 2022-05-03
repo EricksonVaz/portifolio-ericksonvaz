@@ -1,0 +1,99 @@
+.modal-show-certificate{
+    width: 900px;
+    height: 500px;
+    background-color: white;
+    border-radius: 10px;
+    z-index: 4;
+    position: fixed;
+    top: -50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: top .5s;
+}
+.modal-show-certificate.open{
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.modal-header{
+    color: rgb(76, 76, 76);
+    font-size: 3rem;
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 1.5rem;
+    border-bottom: 2px solid gainsboro;
+}
+.modal-header .close{
+    font-size: 4rem;
+    color: rgba(76, 76, 76, 0.54);;
+    cursor: pointer;
+    display: block;
+}
+.modal-body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.img-certificate{
+    max-width: 500px;
+    border: 1px solid #4c4c4c;
+    max-height: 354px;
+}
+.modal-footer{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+}
+.open-cert-link{
+    border: 2px solid rgb(255, 145, 0);
+    color: rgb(255, 145, 0);
+    font-size: 1.8rem;
+    padding: 1rem;
+    margin-top: 1rem;
+    border-radius: 5px;
+    text-transform: lowercase;
+    text-align: center;
+    transition: all .3s;
+    margin-left: calc(50% - 4rem);
+    margin-right: auto;
+}
+.control-prev{
+    cursor: pointer;
+    border-top: 3rem solid transparent;
+    border-bottom: 3rem solid transparent;
+    border-left: 1rem solid transparent;
+    border-right: 3rem solid #4c4c4c;
+    margin-right: 1rem;
+}
+.control-next {
+    cursor: pointer;
+    border-top: 3rem solid transparent;
+    border-bottom: 3rem solid transparent;
+    border-left: 3rem solid #4c4c4c;
+    border-right: 1rem solid transparent;
+}
+@media all and (max-width:980px){
+    .modal-show-certificate{
+        width: 95%;
+    }
+}
+@media all and (max-width:590px){
+    .img-certificate{
+        width: 95%;
+    }
+}
+@media all and (max-width:555px){
+    .modal-show-certificate{
+        height: max-content;
+        padding-bottom: 2rem;
+    }
+    .modal-title{
+        font-size: 2rem;
+    }
+    .modal-footer{
+        margin-top: 2rem;
+    }
+}

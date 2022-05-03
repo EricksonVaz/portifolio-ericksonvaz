@@ -1,0 +1,104 @@
+.main-header{
+    position: fixed;
+    width: 100%;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #4c4c4c;
+    background-color: #2C241B;
+    z-index: 2;
+    top: 0;
+}
+.logo{
+    font-size: 1.6rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+}
+.logo:hover{
+    color: white;
+}
+.logo-devider{
+    width: 100%;
+    border-bottom: 2px solid rgb(255, 145, 0);
+    margin: .5rem 0;
+}
+.main-navigation{
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+.navigation{
+    display: flex;
+    align-items: center;
+    margin-right: 1.5rem;
+}
+.navigation-link{
+    font-size: 1.5rem;
+    color: white;
+    padding: .5rem 1rem;
+    display: block;
+    border-bottom: 2px solid transparent;
+    transition: all .3s;
+}
+.navigation-link:hover{
+    color: rgb(255, 145, 0);
+    border-bottom: 2px solid rgb(255, 145, 0);
+}
+.translate-btn{
+    border: none;
+    padding: .5rem;
+    background-color: transparent;
+}
+.burger-menu-icon{
+    width: 30px;
+    height: 25px;
+    border-top: 3px solid white;
+    border-bottom: 3px solid white;
+    cursor: pointer;
+    display: none;
+}
+.burger-menu-icon::after{
+    content: "";
+    display: block;
+    border-bottom: 3px solid white;
+    width: 100%;
+}
+
+@media all and (max-width:620px) {
+    .burger-menu-icon {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .main-navigation{
+        position: absolute;
+        flex-direction: column;
+        right: -100%;
+        top: 6.8rem;
+        background-color: #2C241B;
+        align-items: flex-start;
+        width: 200px;
+        border: 1px solid #4c4c4c;
+        padding: 0 1rem;
+        transition: right .3s;
+    }
+    .main-navigation.open{
+        right: 0;
+    }
+    .navigation{
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .navigation-link{
+        padding: 1rem 0;
+    }
+    .navigation-link:hover {
+        color: rgb(255, 145, 0);
+        border-bottom: 2px solid transparent;
+        font-weight: bolder;
+    }
+}

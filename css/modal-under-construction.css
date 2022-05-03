@@ -1,0 +1,39 @@
+.modal-under-construction {
+    width: 300px;
+    height: 300px;
+    background-color: white;
+    border-radius: 10px;
+    z-index: 4;
+    position: fixed;
+    top: -50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: top .5s;
+}
+
+.modal-under-construction.open {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.modal-under-construction .modal-title{
+    font-size: 2.1rem;
+}
+
+.modal-under-construction .modal-body{
+    color: rgb(76, 76, 76);
+    font-size: 2rem;
+    text-align: center;
+}
+
+.modal-under-construction i{
+    font-size: 6rem;
+    margin: 1.5rem 0;
+    color: rgb(76, 76, 76);
+}
+@media all and (max-width:340px){
+    .modal-under-construction{
+        width: 95%;
+    }
+}

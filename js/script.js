@@ -22,6 +22,10 @@ window.addEventListener("load",function(){
     const modalTitleReadme = modalReadmeProject.querySelector(".modal-project-title");
     const modalBodyReadmeProject = modalReadmeProject.querySelector(".modal-body");
 
+    const modalUnderConstruction = document.querySelector(".modal-under-construction");
+    const linksOpenModalUnderConstruction = document.querySelectorAll(".under-construction");
+    const formContact = document.querySelector(".form-contact");
+
     let certificates = [...allCertificatesCards];
     let indexCertificateClicked = -1;
 
@@ -123,6 +127,14 @@ window.addEventListener("load",function(){
         });
     });
 
+    linksOpenModalUnderConstruction.forEach(el=>{
+        el.addEventListener("click",function(e){
+            e.preventDefault();
+            backdropModal.classList.add("open");
+            modalUnderConstruction.classList.add("open");
+        });
+    })
+
     selectDropdown.addEventListener("change",function(){
         let stackSelected = selectDropdown.value;
         let listCardsVisible = listProjectContainer.querySelectorAll(".tab-projects.show > .card-project");
@@ -143,7 +155,40 @@ window.addEventListener("load",function(){
                 
             });
         }
-    })
+    });
+
+    formContact.addEventListener("submit",function(e){
+        e.preventDefault();
+        //console.log(formContact.checkValidity)
+        let inputEmail = formContact.querySelector(`[name="email"]`).value;
+        let inputName = formContact.querySelector(`[name="name"]`).value;
+        let inputSubject = formContact.querySelector(`[name="subject"]`).value;
+        let inputBody = formContact.querySelector(`[name="body"]`).value;
+
+        if(inputEmail.length && inputName.length && inputSubject.length && inputBody.length){
+             Email.send({
+                SecureToken : "9a902b5a-b3af-4070-ac75-3d5d612020eb",
+                To : 'ericksoncv1@outlook.com',
+                From : inputEmail,
+                Subject : "Portifolio - "+inputSubject,
+                Body : `
+                    Nome: ${inputName}
+                    Email: ${inputEmail}
+
+                    TXT: ${inputBody}
+
+                `
+            }).then(
+                message =>swal(message)
+            );
+        }else{
+            swal({
+                title: "Oops!",
+                text: "todos os campos são obrigatorios",
+                icon: "error",
+            });
+        }
+    });
 
     function loadCertModal(indexCertificate){
         let [certImg,certLink,certTitle] = certificates[indexCertificate];

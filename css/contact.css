@@ -1,6 +1,22 @@
 .form-contact{
     margin: 3rem auto;
     width: 600px;
+    position: relative;
+}
+.loader-container{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.199);
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    padding: 1rem;
+}
+.loader-label{
+    font-size: 1.6rem;
 }
 .form-control{
     width: 100%;

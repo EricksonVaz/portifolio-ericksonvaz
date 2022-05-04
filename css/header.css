@@ -68,7 +68,7 @@
     width: 100%;
 }
 
-@media all and (max-width:620px) {
+@media all and (max-width:710px) {
     .burger-menu-icon {
         display: flex;
         flex-direction: column;
@@ -81,7 +81,7 @@
         top: 6.8rem;
         background-color: #2C241B;
         align-items: flex-start;
-        width: 200px;
+        width: 220px;
         border: 1px solid #4c4c4c;
         padding: 0 1rem;
         transition: right .3s;

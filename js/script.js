@@ -25,6 +25,7 @@ window.addEventListener("load",function(){
     const modalUnderConstruction = document.querySelector(".modal-under-construction");
     const linksOpenModalUnderConstruction = document.querySelectorAll(".under-construction");
     const formContact = document.querySelector(".form-contact");
+    const loadFormContact = formContact.querySelector(".loader-container");
 
     let certificates = [...allCertificatesCards];
     let indexCertificateClicked = -1;
@@ -96,12 +97,13 @@ window.addEventListener("load",function(){
             backdropModal.classList.add("open");
             modalReadmeProject.classList.add("open");
 
+            modalBodyReadmeProject.innerHTML = `<p>Carregando, porfavor aguarde...</p>`
             fetch(assetsReadmeFile)
             .then(resp=>resp.text())
             .then(text=>{
                 modalBodyReadmeProject.innerHTML = `<p>${text}</p>`;
             });
-        })
+        });
     });
 
     btnsProjectsTabs.forEach(el=>{
@@ -166,25 +168,43 @@ window.addEventListener("load",function(){
         let inputBody = formContact.querySelector(`[name="body"]`).value;
 
         if(inputEmail.length && inputName.length && inputSubject.length && inputBody.length){
-             Email.send({
-                SecureToken : "9a902b5a-b3af-4070-ac75-3d5d612020eb",
-                To : 'ericksoncv1@outlook.com',
-                From : inputEmail,
-                Subject : "Portifolio - "+inputSubject,
-                Body : `
-                    Nome: ${inputName}
-                    Email: ${inputEmail}
 
-                    TXT: ${inputBody}
+            let formData = new FormData(this);
+            formData.append('service_id', 'service_9i3cyrt');
+            formData.append('template_id', 'template_4p732f4');
+            formData.append('user_id', '-75xPtTpRytrcQ-Sg');
 
-                `
-            }).then(
-                message =>swal(message)
-            );
+            loadFormContact.classList.remove("d-none");
+
+            fetch('https://api.emailjs.com/api/v1.0/email/send-form',{
+                method: "POST",
+                body: formData
+            }).then(resp=>{
+                if(resp.status == 200){
+                    return {
+                            title: translate("Obrigado"),
+                            text: translate("A sua messagem foi enviada, obrigado por entrar em contacto comigo"),
+                            icon: "success",
+                        }
+                }else{
+                    return {
+                            title: "Oops!!!",
+                            text: translate("Peço desculpas, de momento não foi possivel enviar o email para o Erickson Vaz atraves do site, mas podes enviar directamente para o seu email pessoal, ericksoncv1@outlook.com"),
+                            icon: "warning",
+                        };
+                }
+            }).then(objResp=>{
+                swal(objResp);
+                loadFormContact.classList.add("d-none");
+                formContact.reset();
+            }).catch(error=>{
+                loadFormContact.classList.add("d-none");
+            });
+
         }else{
             swal({
                 title: "Oops!",
-                text: "todos os campos são obrigatorios",
+                text: translate("todos os campos são obrigatorios"),
                 icon: "error",
             });
         }

@@ -68,7 +68,7 @@
     width: 100%;
 }
 
-@media all and (max-width:710px) {
+@media all and (max-width:780px) {
     .burger-menu-icon {
         display: flex;
         flex-direction: column;
